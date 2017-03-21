@@ -1,9 +1,13 @@
 import tap from 'tap';
-import doStuff from '../src/asyncStuff';
+import Stuff from '../src/asyncStuff';
 
 global.Promise = require('bluebird');
 
 tap.test('test fn', async (tester) => {
-    await doStuff();
+    const s = new Stuff();
+    s.withReq(async (req) => {
+        console.log('in req');
+        await s.doStuff();
+    });
     tester.ok(true, 'yes sir');
 });
