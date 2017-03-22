@@ -1,3 +1,5 @@
 {
-  "presets": ["gasbuddy"]
+  "presets": ["gasbuddy"],
+  "sourceMaps": true,
+  "retainLines": true
 }
